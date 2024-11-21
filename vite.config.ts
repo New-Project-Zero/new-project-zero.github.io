@@ -4,6 +4,9 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
   base: '/new-project-zero.github.io/', // repo name
+  build: {
+    outDir: 'dist', // Ensure the build directory is correct
+  },
   plugins: [
     react(),
     nodePolyfills({

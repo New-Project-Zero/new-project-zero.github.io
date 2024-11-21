@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-	"predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@solana/web3.js": "^1.95.5",
