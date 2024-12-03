@@ -47,7 +47,7 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
 
   const checkForToken = async (publicKey: PublicKey) => {
     const tokenMintAddress = new PublicKey('2Xf4kHq69r4gh763aTGN82XvYzPMhXrRhAEJ29trpump')
-    const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}')
+    const connection = new Connection('https://mainnet.helius-rpc.com/?api-key=f9866e76-2615-4709-8544-edf6be593606')
 
     try {
       const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, { mint: tokenMintAddress })
