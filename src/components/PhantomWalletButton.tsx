@@ -78,7 +78,7 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
           </h2>
           <p className="mb-4">
             {hasToken 
-              ? "NEWP holder detected. Welcome aboard." 
+              ? "NEWP holder detected. Welcome aboard. Soon you have access to a suite of capabilities integrated with 0verman." 
               : "Looks like you don't have any NEWP tokens in this wallet..."}
           </p>
           <button 

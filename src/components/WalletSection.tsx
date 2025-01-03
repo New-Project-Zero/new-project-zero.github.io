@@ -7,7 +7,7 @@ interface WalletSectionProps {
 export function WalletSection({ onTokenCheck }: WalletSectionProps) {
   return (
     <div className="text-center">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4">Connect Wallet</h2>
+      <h3 className="text-1xl sm:text-2xl md:text-3xl mb-4">Hold $NEWP?</h3>
       <PhantomWalletButton onTokenCheck={onTokenCheck} />
     </div>
   )

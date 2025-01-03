@@ -1,10 +1,10 @@
 import React from 'react'
 import { Header } from './components/Header'
-import { Countdown } from './components/Countdown'
 import { WalletSection } from './components/WalletSection'
 import { TokenInfo } from './components/TokenInfo'
 import { SocialLinks } from './components/SocialLinks'
 import { SproutEmojis } from './components/SproutEmojis'
+import { Description } from './components/Description'
 
 export default function App() {
   const [hasToken, setHasToken] = React.useState(false)
@@ -14,7 +14,7 @@ export default function App() {
       <div className="container mx-auto px-4 py-8 text-center">
         <Header />
         <main className="mt-12 space-y-12">
-          <Countdown />
+          <Description />
           <WalletSection onTokenCheck={setHasToken} />
           <TokenInfo />
           <SocialLinks />
