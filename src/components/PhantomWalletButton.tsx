@@ -94,7 +94,7 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
           <p className="mb-4">
             {hasToken 
               ? "NEWP holder detected. Welcome aboard. Soon you have access to a suite of capabilities integrated with 0verman." 
-              : "Under construction"}
+              : "🌱Under Construction🌱"}
           </p>
           <button 
             onClick={() => setIsModalOpen(false)}
