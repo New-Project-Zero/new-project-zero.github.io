@@ -30,6 +30,9 @@ export function TokenInfo() {
             2Xf4kHq69r4gh763aTGN82XvYzPMhXrRhAEJ29trpump
           </a>
         </div>
+        <div className="mt-8">
+        <a href="https://solscan.io/account/FQz1ivTyxkYfQwC37SNyKp1MriXVkkPkXAmJdw5Vp8Bv" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-3xl mb-2 text-green-400">
+          Marketing & Budget Donations: newp.sol</a></div>
       </div>
     </div>
   )
