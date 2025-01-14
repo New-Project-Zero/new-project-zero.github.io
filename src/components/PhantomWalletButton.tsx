@@ -47,9 +47,24 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
 
   const checkForToken = async (publicKey: PublicKey) => {
     const tokenMintAddress = new PublicKey('2Xf4kHq69r4gh763aTGN82XvYzPMhXrRhAEJ29trpump')
-    const connection = new Connection(`https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`)
-
+    let connection; // Declare connection outside the try block
+  
     try {
+      // Fetch the API key from the '/api/helius-api-key' endpoint
+      const response = await fetch('/api/helius-api-key');
+      const data = await response.json();
+      const apiKey = data.apiKey;
+  
+      connection = new Connection(`https://mainnet.helius-rpc.com/?api-key=${apiKey}`)
+    } catch (err) {
+      console.error("API error:", err)
+      setHasToken(false)
+      onTokenCheck(false)
+      return; // Exit the function if API call fails
+    }
+  
+    try {
+      // Now you can use the connection object here
       const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, { mint: tokenMintAddress })
       const tokenFound = tokenAccounts.value.length > 0
       setHasToken(tokenFound)
@@ -74,12 +89,12 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className={`text-xl mb-4 ${hasToken ? 'text-green-400' : 'text-red-400'}`}>
-            {hasToken ? 'NEWP Holder' : 'No NEWP? Uh oh...'}
+            {hasToken ? 'NEWP Holder' : 'Coming soon..'}
           </h2>
           <p className="mb-4">
             {hasToken 
               ? "NEWP holder detected. Welcome aboard. Soon you have access to a suite of capabilities integrated with 0verman." 
-              : "Looks like you don't have any NEWP tokens in this wallet..."}
+              : "Under construction"}
           </p>
           <button 
             onClick={() => setIsModalOpen(false)}
@@ -107,7 +122,7 @@ export function PhantomWalletButton({ onTokenCheck }: PhantomWalletButtonProps) 
             {walletKey.slice(0, 4)}...{walletKey.slice(-4)}
             {hasToken !== undefined && (
               <span className="ml-2">
-                {hasToken ? '🌱' : '❌'}
+                {hasToken ? '🌱' : '🌱'}
               </span>
             )}
           </span>
