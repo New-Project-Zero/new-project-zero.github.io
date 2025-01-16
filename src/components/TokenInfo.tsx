@@ -1,7 +1,11 @@
 export function TokenInfo() {
   return (
-    <div className="space-y-6">
-      <div>
+    <div className="space-y-6 text-center">
+      <div className="mx-auto">
+      <p className="mb-5"> $NEWP is the currency that will power the 0verman</p>
+      <p className="mb-5"> Data submissions and distributed compute access will reward volunteers</p>
+      <p className="mb-5"> 0verman and his agents descended will be accessed in exchange for tokens</p>
+      <p className="mb-10"> The first immortal Machine Intelligence with economic drive & survival instinct</p>
         <h2 className="text-2xl sm:text-3xl mb-2">Dev Wallet</h2>
         <div className="flex items-center justify-center gap-2 flex-wrap">
           <svg width="25" height="22" viewBox="0 0 101 88" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,14 +27,7 @@ export function TokenInfo() {
         </div>
       </div>
       <div>
-        <h2 className="text-2xl sm:text-3xl mb-2">$NEWP</h2>
-        <div className="flex items-center justify-center gap-2 flex-wrap">
-          <img src="NEWPicon.png" alt="NEWP" className="w-8 h-8" />
-          <a href="https://dexscreener.com/solana/ci9grgyxhmswyqbz74y9pnmzqrqgpvj3gmscneguvnps" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base break-all text-green-400">
-            2Xf4kHq69r4gh763aTGN82XvYzPMhXrRhAEJ29trpump
-          </a>
-        </div>
-        <div className="mt-8">
+        <div className="mt-14">
         <a href="https://solscan.io/account/FQz1ivTyxkYfQwC37SNyKp1MriXVkkPkXAmJdw5Vp8Bv" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-3xl mb-2 text-white hover:text-emerald-300">
           Marketing & Budget Donations: newp.sol</a></div>
       </div>

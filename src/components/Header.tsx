@@ -1,12 +1,33 @@
-export function Header() {
+import { Link, useLocation } from 'react-router-dom'
+
+export default function Header() {
+  const location = useLocation()
+  
+  const isActive = (path: string) => {
+    return location.pathname === path ? 'text-green-400' : 'text-gray-300 hover:text-white'
+  }
+
   return (
-    <header className="text-center">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text bg-gradient-to-r from-white-400 to-emerald-600">
-        New Project Zero:
-      </h1>
-      <h2 className="mt-4 text-3xl sm:text-3xl md:text-4xl lg:text-5xl">
-        The 0verman Initiative
-      </h2>
+    <header className=" backdrop-blur-sm py-4 sticky top-0 z-50">
+      <nav className="container mx-auto px-4">
+        <ul className="flex space-x-8 justify-center">
+          <li>
+            <Link to="/" className={isActive('/')}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={isActive('/about')}>
+              0verman
+            </Link>
+          </li>
+          <li>
+            <Link to="/homunculus" className={isActive('/homunculus')}>
+              $NEWP
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }
